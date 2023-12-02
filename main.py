@@ -3,7 +3,9 @@ from bs4 import BeautifulSoup
 from get_cik import get_cik_from_ticker
 
    
-def getFilings(cik):  
+def getFilings(ticker):  
+
+    cik = get_cik_from_ticker(ticker)
     
     # Define the URL for the EDGAR search page
     edgar_search_url = 'https://www.sec.gov/cgi-bin/browse-edgar'
@@ -42,6 +44,6 @@ def getFilings(cik):
 
 if __name__ == '__main__':
 
-    getFilings(320193)
+    getFilings('aapl')
 
 
